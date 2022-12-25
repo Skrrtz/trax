@@ -1,74 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <title>Cool Website</title>
   <style>
+    /* Add some fancy font styles */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
     body {
-      background: linear-gradient(to right, #1488CC, #2B32B2);
+      font-family: 'Roboto Mono', monospace;
+      color: white;
+    }
+
+    /* Add a cool parallax scrolling effect to the background image */
+    .bg-image {
+      background-image: url('https://source.unsplash.com/random');
       background-size: cover;
-    }
-
-    .button {
-       position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 24px;
-      font-weight: bold;
-      color: #ffffff;
-      background-color: #3498db;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      width: 200px;
-      height: 50px;
-      margin: 0 auto;
-      transition: all 0.3s ease;
-      animation: floating 5s ease-in-out infinite;
-    }
-
-    .button:hover {
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-      transform: translateY(-2px);
-    }
-
-    @keyframes floating {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-8px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    .button::before {
-      content: "";
-      position: absolute;
-      top: -4px;
-      left: -4px;
-      width: calc(100% + 8px);
-      height: calc(100% + 8px);
-      border-radius: 8px;
-      box-shadow: 0 0 8px #ffffff;
+      background-position: center;
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
       z-index: -1;
-      transition: all 0.3s ease;
+      filter: brightness(50%);
     }
 
-    .button:hover::before {
-      top: -8px;
-      left: -8px;
-      width: calc(100% + 16px);
-      height: calc(100% + 16px);
-      box-shadow: 0 0 16px #ffffff;
+    /* Add some spacing and styling to the content */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 50px;
+      text-align: center;
+    }
+
+    /* Add some hover effects to the buttons */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      color: white;
+      background-color: #333;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #777;
+    }
+
+    /* Add some responsive styling */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
 <body>
-  <a href="https://discord.com" class="button">DISCORD</a>
+  <!-- Add a cool parallax scrolling background image -->
+  <div class="bg-image"></div>
+
+  <!-- Add some content in a container -->
+  <div class="container">
+    <h1>Welcome to my Cool Website!</h1>
+    <p>This website has some really cool effects and features. Check out the buttons below:</p>
+    <div>
+      <!-- Add some cool buttons -->
+      <button class="btn">Button 1</button>
+      <button class="btn">Button 2</button>
+      <button class="btn">Button 3</button>
+    </div>
+  </div>
 </body>
 </html>
