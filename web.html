@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Website</title>
+    <style>
+      body {
+        background-image: url('https://raw.githubusercontent.com/Skrrtz/Scripts/main/1567665.png');
+        background-size: cover;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+      }
+      .frame {
+        width: 50%;
+        height: 50%;
+        border: 2px solid black;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      .button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto;
+      }
+      p, h1, h2 {
+        color: white;
+        font-family: Arial;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- header content goes here -->
+      <h1>Welcome to My Website</h1>
+    </header>
+    <nav>
+      <!-- navigation links go here -->
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="frame">
+      <button class="button" onclick="copyToClipboard('hi')">Copy "hi" to Clipboard</button>
+      <button class="button" onclick="copyToClipboard('hello')">Copy "hello" to Clipboard</button>
+      <button class="button" onclick="copyToClipboard('how are you')">Copy "how are you" to Clipboard</button>
+    </div>
+    <footer>
+      <!-- footer content goes here -->
+      <p>Copyright 2021 My Website</p>
+    </footer>
+    <script>
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(function() {
+          console.log('Text copied to clipboard');
+        }, function(error) {
+          console.error('Error copying text to clipboard:', error);
+        });
+      }
+    </script>
+  </body>
+</html>
