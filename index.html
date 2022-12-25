@@ -5,25 +5,29 @@
   <title>nevi</title>
   <style>
     /* Add some fancy font styles */
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
-    body {
-      font-family: 'Roboto Mono', monospace;
-      color: white;
-    }
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+body {
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+   /* Add this line to make the body scrollable */
+  height: 200px;
+}
 
-    /* Add a cool parallax scrolling effect to the background image */
-    .bg-image {
-      background-image: url('https://www.wallpaperflare.com/static/133/604/932/fantasy-art-digital-art-space-art-space-wallpaper.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      filter: brightness(66%);
-    }
+/* Add a cool parallax scrolling effect to the background image */
+
+
+.bg-image {
+  background-image: url('https://www.wallpaperflare.com/static/133/604/932/fantasy-art-digital-art-space-art-space-wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(66%);
+}
 .frame {
   border: 2px solid black;  /* create a border around the frame */
   box-shadow: 0 0 20px 10px blue;  /* add a glowing effect with a blue color */
@@ -80,6 +84,8 @@
       background-color: rgba(0, 0, 0, 0.6);
       box-shadow: 0 0 12px black;
     }
+    
+
   </style>
 </head>
 <body>
@@ -92,7 +98,9 @@
     <a>When I want to say something is is listed below</a>
   <p class="frame">
   <!-- content goes here -->
-  I would like to tell you all that visit this, join the discord below!
+  <a id="myDiv">
+  Uh... we ran into a problem. The live text is broken or down. this will be fixed shortyl. mean while check your internet/refresh and see if that fixes it!
+  </a>
   <!-- content ends here -->
 </p>
 <div>
@@ -102,5 +110,12 @@
     <div>
       <!-- Add a button with a link to Discord and an effect when clicked -->
       <a href="https://discord.gg/cMpWsUSRtr" target="_blank" 		          class="btn">DISCORD</a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-      
+   
+     <script>
+  // Use jQuery to retrieve the raw text from a pastebin and set it as the text content of the element with the ID "myDiv"
+  $.get("https://raw.githubusercontent.com/Skrrtz/trax/main/live.txt", function(data) {
+    $("#myDiv").text(data);
+  });
+</script>
