@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: linear-gradient(to right, #1488CC, #2B32B2);
+      background-size: cover;
+    }
+
+    .button {
+       position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #3498db;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      width: 200px;
+      height: 50px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+      animation: floating 5s ease-in-out infinite;
+    }
+
+    .button:hover {
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .button::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      border-radius: 8px;
+      box-shadow: 0 0 8px #ffffff;
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover::before {
+      top: -8px;
+      left: -8px;
+      width: calc(100% + 16px);
+      height: calc(100% + 16px);
+      box-shadow: 0 0 16px #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://discord.com" class="button">DISCORD</a>
+</body>
+</html>
