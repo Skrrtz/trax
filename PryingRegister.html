@@ -5,6 +5,7 @@
    <meta charset="utf-8">
     <style>
       body {
+
         font-family: sans-serif;
         color:white;
   background-image: url('https://www.wallpaperflare.com/static/133/604/932/fantasy-art-digital-art-space-art-space-wallpaper.jpg');
@@ -19,7 +20,10 @@
   filter: brightness(66%);
 
       }
-      
+.scrollable {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
       h1 {
         color: #ffffff;
       }
@@ -101,7 +105,7 @@
           return;
         }
 if (document.getElementById('key').value != '5D3F8-G1H9J-2K4L6-7M8N9-0P1Q2') {
-alert("Key is not found in server!")
+alert("Key")
 } else {
    document.getElementById("error").innerHTML = "";
 
