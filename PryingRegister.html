@@ -128,9 +128,10 @@ html, body {
           document.getElementById("error").innerHTML = "Error: Please contact the owner.";
           return;
         }
+var key3 = "R0pLTC1UWUZWLU5CTUMtWFowMS0yMzQ1LTY3ODk=";
 
-
-if (document.getElementById('key').value != 'GJKL-TYFV-NBMC-XZ01-2345-6789') {
+var encoded = atob(key3);
+if (document.getElementById('key').value != encoded) {
 alert("Sorry, I looked everywhere but I can't see your key. Maybe this is an error if not please contact the owner!")
 } else {
    document.getElementById("error").innerHTML = "";
