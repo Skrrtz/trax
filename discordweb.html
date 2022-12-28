@@ -4,18 +4,31 @@
     <style>
       body {
         font-family: sans-serif;
-        background-color: #00b8d4;
+        color:white;
+  background-image: url('https://www.wallpaperflare.com/static/133/604/932/fantasy-art-digital-art-space-art-space-wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(66%);
+
       }
+      
       h1 {
         color: #ffffff;
       }
+      
       .form-container {
         width: 500px;
         margin: 0 auto;
-        background-color: #ffffff;
+        background-color: transparent;
         border-radius: 10px;
         padding: 20px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 33px rgba(0, 0, 0, 666565);
       }
       input[type="text"] {
         width: 100%;
@@ -26,12 +39,17 @@
         margin-bottom: 20px;
       }
       input[type="button"] {
-        background-color: #00b8d4;
-        color: #ffffff;
-        font-size: 18px;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
+        display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      color: white;
+      background-color: transparent;
+      cursor: pointer;
+      transition: background-color 0.4s; box-shadow 0.4s;
+      box-shadow: 0 0 55px #0000FF;
       }
       .error {
         color: #ff0000;
@@ -40,19 +58,20 @@
   </head>
   <body>
     <div class="form-container">
-      <h1 style=color:black>Send shit to my server</h1>
+      <h1 style=color:white>Send shit to my server</h1>
       <p style=color:red>Rules: any kind of racist, swear, LGBTQ, links are not allowed. Any kind of bypass will result you a ban!</p>
       <form>
         Message: <input type="text" id="message" maxlength="40"><br>
         Name: <input type="text" id="name" maxlength="5"><br>
-        <input type="button" value="Send" onclick="sendMessage()">
+        <input type="button" value="Send" onclick="sendMessage()"id="buton">
       </form>
       <p class="error" id="error"></p>
     </div>
     <script>
       // Define a word blacklist
       var blacklist = ["Fuck","bitch","nigga","KKK","BLDM","gay","lgbtq","lesbian"];
-
+      // Error message
+	var errorinfo = "Error: Cannot send messages due to rule breaking or an error."
       function sendMessage() {
         // Get the message and name from the input fields
         var message = document.getElementById("message").value;
@@ -76,12 +95,12 @@
 
         // Check if the message contains any words from the blacklist
         for (var i = 0; i < blacklist.length; i++) {        if (message.toLowerCase().includes(blacklist[i].toLowerCase())) {
-          document.getElementById("error").innerHTML = "Error: Cannot send messages due to rule breaking or an error.";
+          document.getElementById("error").innerHTML = errorinfo;
           return;
         }
       }
         for (var i = 0; i < blacklist.length; i++) {        if (name.toLowerCase().includes(blacklist[i].toLowerCase())) {
-          document.getElementById("error").innerHTML = "Error: Cannot send messages with inappropriate language.";
+          document.getElementById("error").innerHTML = errorinfo;
           return;
         }
       }
@@ -90,6 +109,7 @@
 
       // Set the webhook URL
       var webhook = "https%3A%2F%2Fdiscord.com%2Fapi%2Fwebhooks%2F1057654784380907530%2FmrcIj0YV9SZWQL4t069wRIUJclsoo7tgocpAPjtQI9Mzj29zxaC5NUs97_l_bv_2DLLa";
+
 var decodedString = decodeURIComponent(webhook);
       // Send the message to the Discord server using the webhook
       fetch(decodedString, {
@@ -105,5 +125,8 @@ var decodedString = decodeURIComponent(webhook);
         })
       });
     }
+    
+   
   </script>
+
 </html>
