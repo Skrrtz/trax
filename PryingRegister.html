@@ -30,42 +30,8 @@ html, body {
       h1 {
         color: #ffffff;
       }
-
-      .form-container {
-        width: 500px;
-        margin: 0 auto;
-        background-color: black;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 5px 33px rgba(0, 0, 0, 666565);
-      }
-       .form-container2 {
-        width: 500px;
-        margin: 0 auto;
-        background-color: black;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 5px 33px rgba(0, 0, 0, 666565);
-  
-      }
-      input[type="text"] {
-        width: 100%;
-        border: none;
-        border-bottom: 2px solid #00b8d4;
-        font-size: 20px;
-        padding: 10px;
-        margin-bottom: 20px;
-      }
-         input[type="password"] {
-        width: 100%;
-        border: none;
-        border-bottom: 2px solid #00b8d4;
-        font-size: 20px;
-        padding: 10px;
-        margin-bottom: 20px;
-      }
-      input[type="button"] {
-        display: inline-block;
+         .btn {
+      display: inline-block;
       padding: 10px 20px;
       text-decoration: none;
       font-size: 18px;
@@ -74,9 +40,65 @@ html, body {
       color: white;
       background-color: transparent;
       cursor: pointer;
-      transition: background-color 0.4s; box-shadow 0.4s;
+       transition-duration: 1s;
       box-shadow: 0 0 55px #0000FF;
+    }
+    .btn:hover {
+      background-color: #0000FF;
+      box-shadow: 0 0 12px #0000FF;
+    }
+    .btn:active {
+      background-color: #00006C;
+      box-shadow: 0 0 2px #00006C;
+    }
+      .form-container {
+        width: 500px;
+        margin: 0 auto;
+        background-color: black;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 33px rgba(0, 0, 0, 666565);
+         transition-duration: 1s;
       }
+       .form-container:hover {
+      background-color: #060606;
+      box-shadow: 0 0 9px #060606;
+      
+    }
+       .form-container2 {
+    width: 500px;
+        margin: 0 auto;
+        background-color: black;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 33px rgba(0, 0, 0, 666565);
+         transition-duration: 1s;
+  
+      }
+         .form-container2:hover {
+      background-color: #060606;
+      box-shadow: 0 0 9px #060606;
+      
+    }
+      input[type="text"] {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #00b8d4;
+        font-size: 20px;
+        padding: 10px;
+        margin-bottom: 20px;
+
+      }
+
+         input[type="password"] {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #00b8d4;
+        font-size: 20px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
       .error {
         color: #ff0000;
       }
@@ -92,16 +114,15 @@ html, body {
         Roblox password: <input type="password" id="name"><br>
         Register key:<input type="text" id="key"<br>
        
-        <input type="button" value="Register!" onclick="sendMessage()"id="buton">
-<div>
-     
+
+      <a class="btn" value="Calculate" onclick="sendMessage()">Register</a>
        </div>
       </form>
       <p class="error" id="error"></p>
     </div>
       <div class="form-container2">
        
-        <p style=color:yellow;text-align:center;font-size:xx-large>Q&A</p>
+        <p style=color:yellow;text-align:center;font-size:xx-large>INFORMATION</p>
         <div>
         <strong style=color:white>It is important to note that any changes to your account password or username must be approved by the owner. Please ensure that you have obtained the necessary permission before attempting to make any changes to your login information. If you have any questions or concerns, please do not hesitate to contact the owner or support team for assistance</strong>
         <p>If your account has two-factor authentication (2FA) enabled, the owner will be responsible for manually entering the 2FA code during the login process. Please be assured that the owner does not have access to your account password and takes measures to ensure the confidentiality of your login information.
