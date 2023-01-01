@@ -1,0 +1,153 @@
+<html>
+  <head>
+   <meta charset="utf-8">
+    <style>
+      body {
+
+        font-family: sans-serif;
+        color:white;
+  background-image: url('https://media.istockphoto.com/id/1336271758/photo/programming-source-code-on-digital-screen-software-developer-and-internet-programming-html.jpg?b=1&s=170667a&w=0&k=20&c=MmOg-1sDCVGFou5fOUI8ySd6KVXNV6bvJXOmPa0sELA=');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(66%);
+  overflow-y: scroll;
+      }
+
+html, body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+      h1 {
+        color: #ffffff;
+      }
+         .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      color: white;
+      background-color: transparent;
+      cursor: pointer;
+       transition-duration: 1s;
+      box-shadow: 0 0 55px #0000FF;
+    }
+    .btn:hover {
+      background-color: #0000FF;
+      box-shadow: 0 0 12px #0000FF;
+      
+      
+    }
+    .btn:active {
+      background-color: #00006C;
+      box-shadow: 0 0 2px #00006C;
+    }
+      .form-container {
+        width: 500px;
+        margin: 0 auto;
+        background-color: black;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 33px rgba(0, 0, 0, 666565);
+         transition-duration: 1s;
+         margin-bottom: 20px;
+      }
+       .form-container:hover {
+      background-color: #060606;
+      box-shadow: 0 0 9px #060606;
+      margin-bottom: 75px;
+      
+      
+    }
+       .form-container2 {
+    width: 500px;
+        margin: 0 auto;
+        background-color: black;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 33px rgba(0, 0, 0, 666565);
+         transition-duration: 1s;
+         margin-bottom: 20px;
+  
+      }
+         .form-container2:hover {
+      background-color: #060606;
+      box-shadow: 0 0 9px #060606;
+      margin-bottom: 75px;
+      
+    }
+      input[type="text"] {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #00b8d4;
+        font-size: 20px;
+        padding: 10px;
+        margin-bottom: 20px;
+
+      }
+
+         input[type="password"] {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #00b8d4;
+        font-size: 20px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      .error {
+        color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1 style=color:white>Prying forgot password</h1>
+       <p style=color:gray;font-size:80%>Please note that this script utilizes prying login. Any attempts to utilize a fake login will result in the blacklisting of your account.</p>
+    
+      <form>
+      <p>As a first step, it would be useful to obtain your Discord tag and name.</p>
+      Discord: <input type="text" id="disco"><br>
+       <div>
+        Roblox username: <input type="text" id="name"><br>
+       
+      <a class="btn" value="Calculate" onclick="sendMessage()">Send request</a>
+
+       </div>
+       
+      </form>
+      <p class="error" id="error"></p>
+    </div>
+     
+<div>
+  <div class="form-container2">
+       
+        <p style=color:yellow;text-align:center;font-size:xx-large>Reset information</p>
+        <strong>
+        <p style=color:white>If you have forgotten your password or entered your name or password incorrectly, please enter your Roblox name and Discord tag below. Our team will review your request and work to resolve the issue as soon as possible. In order to receive the most efficient assistance, please ensure that you are in the script Discord server and have provided accurate and up-to-date information.</strong>
+        </p>
+
+</p>
+
+<p style=color:gray;font-size:60%>
+Thank you for choosing Prying Login. We value your trust in us and are committed to providing the best possible user experience. If you have any questions or concerns, do not hesitate to reach out to the owner or support team for assistance.
+</p>
+    </div>
+    
+    <script>
+var _0xb71c=["\x76\x61\x6C\x75\x65","\x6E\x61\x6D\x65","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x64\x69\x73\x63\x6F","\x74\x65\x73\x74","\x23","\x69\x6E\x64\x65\x78\x4F\x66","\x50\x6C\x65\x61\x73\x65\x20\x65\x6E\x73\x75\x72\x65\x20\x74\x68\x61\x74\x20\x79\x6F\x75\x20\x68\x61\x76\x65\x20\x70\x72\x6F\x76\x69\x64\x65\x64\x20\x79\x6F\x75\x72\x20\x44\x69\x73\x63\x6F\x72\x64\x20\x74\x61\x67\x20\x61\x6E\x64\x20\x52\x6F\x62\x6C\x6F\x78\x20\x75\x73\x65\x72\x6E\x61\x6D\x65\x20\x69\x6E\x20\x6F\x72\x64\x65\x72\x20\x74\x6F\x20\x73\x75\x62\x6D\x69\x74\x20\x61\x20\x72\x65\x71\x75\x65\x73\x74\x20\x66\x6F\x72\x20\x70\x61\x73\x73\x77\x6F\x72\x64\x20\x72\x65\x73\x65\x74\x2E","\x41\x20\x72\x65\x71\x75\x65\x73\x74\x20\x66\x6F\x72\x20\x61\x63\x63\x6F\x75\x6E\x74\x20\x72\x65\x73\x65\x74\x20\x68\x61\x73\x20\x62\x65\x65\x6E\x20\x69\x6E\x69\x74\x69\x61\x74\x65\x64\x2E\x20\x4F\x75\x72\x20\x74\x65\x61\x6D\x20\x77\x69\x6C\x6C\x20\x72\x65\x76\x69\x65\x77\x20\x79\x6F\x75\x72\x20\x72\x65\x71\x75\x65\x73\x74\x20\x61\x6E\x64\x20\x67\x65\x74\x20\x62\x61\x63\x6B\x20\x74\x6F\x20\x79\x6F\x75\x20\x61\x73\x20\x73\x6F\x6F\x6E\x20\x61\x73\x20\x70\x6F\x73\x73\x69\x62\x6C\x65\x2E\x20\x54\x68\x61\x6E\x6B\x20\x79\x6F\x75\x20\x66\x6F\x72\x20\x79\x6F\x75\x72\x20\x70\x61\x74\x69\x65\x6E\x63\x65\x2E"];function sendMessage(){const _0x4b4ex2=document[_0xb71c[2]](_0xb71c[1])[_0xb71c[0]];const _0x4b4ex3=document[_0xb71c[2]](_0xb71c[3])[_0xb71c[0]];if(/^\s*$/[_0xb71c[4]](_0x4b4ex3)|| /^\s*$/[_0xb71c[4]](_0x4b4ex2)|| _0x4b4ex3[_0xb71c[6]](_0xb71c[5])===  -1){alert(_0xb71c[7])}else {alert(_0xb71c[8])}}
+  </script>
+  
+  
+
+  
+
+</html>
