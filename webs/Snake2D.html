@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400"></canvas>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Size of each cell in the grid
+    const size = 20;
+
+    // Initial position of the snake
+    let snake = [{ x: 160, y: 160 }];
+
+    // Initial position of the food
+    let food = { x: 320, y: 320 };
+
+    // Initial speed of the snake (in pixels per frame)
+    let speed = 20;
+
+    // Direction of the snake (0 = left, 1 = up, 2 = right, 3 = down)
+    let direction = 2;
+
+    function draw() {
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the snake
+      ctx.fillStyle = 'green';
+      for (let i = 0; i < snake.length; i++) {
+        ctx.fillStyle = i === 0 ? 'darkgreen' : 'green';
+        ctx.fillRect(snake[i].x, snake[i].y, size, size);
+      }
+
+      // Draw the food
+      ctx.fillStyle = 'red';
+      ctx.fillRect(food.x, food.y, size, size);
+    }
+
+    function update() {
+      // Update the snake's position
+      const head = { x: snake[0].x, y: snake[0].y };
+      switch (direction) {
+        case 0:
+          head.x -= size;
+          break;
+        case 1:
+          head.y -= size;
+          break;
+        case 2:
+          head.x += size;
+          break;
+        case 3:
+          head.y += size;
+          break;
+      }
+      snake.unshift(head);
+
+      // Check if the snake has eaten the food
+      if (head.x === food.x && head.y === food.y) {
+        // Generate new food
+        food = {
+          x: Math.floor(Math.random() * 20) * size,
+          y: Math.floor(Math.random() * 20) * size,
+        };
+      } else {
+        // Remove the tail
+        snake.pop();
+      }
+
+      // Check if the snake has collided with the border or itself
+      if (
+        head.x < 0 ||
+        head.y < 0 ||
+        head.x >= canvas.width ||
+        head.y >= canvas.height ||
+        snake.slice(1).some((cell) => head.x === cell.x && head.y === cell.y)
+      ) {
+        // Restart the game
+        snake = [{ x: 160, y: 160 }];
+        food = { x: 320, y: 320 };
+        direction = 2;
+      }
+    }
+
+    function loop() {
+      update();
+      draw();
+          setTimeout(loop, 10000 / 100);
+  }
+
+  document.addEventListener('keydown', (event) => {
+    // Change the direction of the snake based on the arrow keys
+    switch (event.keyCode) {
+      case 65:
+        direction = 0;
+        break;
+      case 87:
+        direction = 1;
+        break;
+      case 68:
+        direction = 2;
+        break;
+      case 83:
+        direction = 3;
+        break;
+    }
+  });
+
+  loop();
+</script>
+</body>
+</html>
