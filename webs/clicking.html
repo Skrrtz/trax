@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Clicker</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+    }
+    h1 {
+      font-size: 2em;
+      margin: 0.5em 0;
+    }
+    button {
+      display: inline-block;
+      border: none;
+      background-color: #ffc107;
+      color: #fff;
+      padding: 1em 2em;
+      font-size: 1em;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, font-size 0.2s ease;
+    }
+    button:active {
+      transform: rotate(2deg) scale(0.95);
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+      font-size: 0.9em;
+    }
+    button:not(:active) {
+      transform: rotate(0deg) scale(1);
+      box-shadow: none;
+      font-size: 1em;
+    }
+    .upgrade {
+      display: inline-block;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      color: #333;
+      padding: 0.5em 1em;
+      margin: 0.5em;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .upgrade:hover {
+      background-color: #f5f5f5;
+    }
+</style>
+<body>
+  <h1 id="score">0</h1>
+  <button onclick="incrementScore()">Earn</button>
+  <div id="upgrades">
+    <h2>Upgrades</h2>
+    <div id="double-points" class="upgrade" onclick="buyUpgrade('double-points', 50, 2)">Double points (50 points)</div>
+    <div id="triple-points" class="upgrade" onclick="buyUpgrade('triple-points', 100, 3)">Triple points (100 points)</div>
+    <div id="quadruple-points" class="upgrade" onclick="buyUpgrade('quadruple-points', 200, 4)">Quadruple points (200 points)</div>
+        <div id="quintuple-points" class="upgrade" onclick="buyUpgrade('quintuple-points', 400, 5)">Quintuple points (400 points)</div>
+           <div id="sextuple-points" class="upgrade" onclick="buyUpgrade('sextuple-points', 800, 6)">Sextuple points (800 points)</div>
+                      <div id="septuple-points" class="upgrade" onclick="buyUpgrade('septuple-points', 1200, 7)">Septuple points (1,2K points)</div>
+                                            <div id="octuple-points" class="upgrade" onclick="buyUpgrade('octuple-points', 2400, 8)">Octuple points (2,4K points)</div>
+                                                                                        <div id="nonuple-points" class="upgrade" onclick="buyUpgrade('nonuple-points', 4800, 9)">Nonuple points (4,8K points)</div>                                                                                  <div id="decuple-points" class="upgrade" onclick="buyUpgrade('decuple-points', 9600, 10)">Decuple points (9,6K points)</div>
+                                                                                                   <div id="hendecuple-points" class="upgrade" onclick="buyUpgrade('hendecuple-points', 19200, 10)">Hendecuple points (19,2K points)</div>
+                                                                                                                                                                                    <div id="omega-points" class="upgrade" onclick="buyUpgrade('omega-points', 10000, 500)">Super double points (100K points)</div>
+                                                                                                                                                                                      <div id="supermega2-points" class="upgrade" onclick="buyUpgrade('supermega2-points', 50000, 500)">Omega double points (500K points)</div>
+                                                                                                                                                                                                                                                                                               <div id="supermega1-points" class="upgrade" onclick="buyUpgrade('supermega1-points', 100000, 1000)">Omega super double points (1M points)</div>
+                                                                                                                                                                                                                                                                                                                         <div id="supermega-points" class="upgrade" onclick="buyUpgrade('supermega-points', 200000, 2000)">Omega super double points (2M points)</div>
+  </div>
+  <script>
+    var multiplier = 1;
+
+    function incrementScore() {
+      var score = parseInt(document.getElementById("score").innerHTML);
+      score += multiplier;
+      document.getElementById("score").innerHTML = score;
+    }
+
+    function buyUpgrade(id, cost, newMultiplier) {
+      var score = parseInt(document.getElementById("score").innerHTML);
+      if (score >= cost) {
+        multiplier = newMultiplier;
+        score -= cost;
+        document.getElementById("score").innerHTML = score;
+        document.getElementById(id).innerHTML = id.replace("-", " ").toUpperCase() + " (Purchased)";
+        document.getElementById(id).style.cursor = "default";
+        document.getElementById(id).style.opacity = 0.5;
+        document.getElementById(id).onclick = "";
+      }
+    }
+  </script>
+</body>
+</html>
+
