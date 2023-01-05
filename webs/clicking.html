@@ -11,25 +11,63 @@
       font-size: 2em;
       margin: 0.5em 0;
     }
-    button {
-      display: inline-block;
+    .button {
+   display: inline-block;
       border: none;
       background-color: #ffc107;
       color: #fff;
       padding: 1em 2em;
       font-size: 1em;
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, font-size 0.2s ease;
+  border-radius: 25px;
+      margin-bottom:10px;
+      box-shadow:5px 5px 0px #CB9F1A;
+     transition: ease all .1s;
+      margin-left:10px;
+      margin-right:10px;
     }
-    button:active {
-      transform: rotate(2deg) scale(0.95);
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-      font-size: 0.9em;
+    .button:active {
+       box-shadow:0px 0px 0px #CB9F1A;
+  		transform:translateY(4px) translateX(4px);
     }
-    button:not(:active) {
-      transform: rotate(0deg) scale(1);
-      box-shadow: none;
+
+        .misc {
+      display: inline-block;
+      border: none;
+      background-color: #15F50A;
+      color: #fff;
+      padding: 1em 2em;
       font-size: 1em;
+      cursor: pointer;
+  border-radius: 25px;
+      margin-bottom:10px;
+      margin-left:10px;
+      margin-right:10px;
+         transition: ease all .1s;
+      box-shadow:5px 5px 0px #22CB1A;
+    }
+          .misc:active {
+       box-shadow:0px 0px 0px #22CB1A;
+  		transform:translateY(4px) translateX(4px);
+    }
+        .reset {
+      display: inline-block;
+      border: none;
+      background-color: red;
+      color: #fff;
+      padding: 1em 2em;
+      font-size: 1em;
+      cursor: pointer;
+  border-radius: 25px;
+      margin-bottom:10px;
+      margin-left:10px;
+      margin-right:10px;
+         transition: ease all .1s;
+      box-shadow:5px 5px 0px #970505;
+    }
+          .reset:active {
+       box-shadow:0px 0px 0px #970505;
+  		transform:translateY(4px) translateX(4px);
     }
     .upgrade {
       display: inline-block;
@@ -40,14 +78,22 @@
       margin: 0.5em;
       cursor: pointer;
       transition: background-color 0.2s ease;
+      
     }
     .upgrade:hover {
       background-color: #f5f5f5;
     }
+
+
 </style>
 <body>
   <h1 id="score">0</h1>
-  <button onclick="incrementScore()">Earn</button>
+  <button  class="button" onclick="incrementScore()">Earn</button>
+    <div>
+    <button class="misc" onclick="save()">Save</button>
+      <button class="misc" onclick="load()">Load</button>
+      <div>
+    <button class="reset" onclick="reset()">Reset</button>
   <div id="upgrades">
     <h2>Upgrades</h2>
     <div id="double-points" class="upgrade" onclick="buyUpgrade('double-points', 50, 2)">Double points (50 points)</div>
@@ -65,11 +111,13 @@
                                                                                                                                                                                                                                                                                                                          <div id="supermega-points" class="upgrade" onclick="buyUpgrade('supermega-points', 200000, 2000)">Omega super double points (2M points)</div>
   </div>
   <script>
+  var cash = 0;
     var multiplier = 1;
 
     function incrementScore() {
       var score = parseInt(document.getElementById("score").innerHTML);
       score += multiplier;
+      cash = score;
       document.getElementById("score").innerHTML = score;
     }
 
@@ -85,7 +133,25 @@
         document.getElementById(id).onclick = "";
       }
     }
+    
+    function save() {
+   
+  localStorage.setItem("cash", cash);
+  localStorage.setItem("mult", multiplier);
+    }
+     function reset() {
+   
+  localStorage.setItem("cash", 0);
+  localStorage.setItem("mult", 0);
+    }
+        function load() {
+   
+   mult = parseInt(localStorage.getItem("mult"));
+   cash = parseInt(localStorage.getItem("cash"));
+   score = cash;
+      document.getElementById("score").innerHTML = cash;
+      multiplier = mult;
+    }
   </script>
 </body>
 </html>
-
