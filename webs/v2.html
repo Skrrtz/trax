@@ -1,14 +1,26 @@
-<!DOCTYPE html>
 <html>
 <head>
   <title>Version 2</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
+<style>
+ .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+ body {
+     background-color:black;
+     color:white;
+ }
+ 
+</style>
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Script Version 2</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,9 +39,9 @@
     </ul>
   </div>
 </nav>
-
+   <a href="https://x.synapse.to" target="_blank"><img src="https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/6NeOkxcoC8k5XS2.png" alt="synapse" class="center" id="image69"></a>
 <!-- Jumbotron -->
-<div class="jumbotron jumbotron-fluid">
+<div style="background-color:#090809;"class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Ready for v2?</h1>
     <p class="lead">Soon you will be on the top</p>
@@ -78,7 +90,20 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/[email protected]/dist/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script>var images = ["https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/Uo3aF5GeYL37JHv.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/6NeOkxcoC8k5XS2.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/aEJSTDMblQYBN97.png"];
+var currentIndex = 0;
 
+var myImage = document.getElementById("image69");
+myImage.src = images[currentIndex];
+
+setInterval(function() {
+    currentIndex++;
+    if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
+    myImage.src = images[currentIndex];
+}, 15000);
+</script>
 </body>
 
 </html>
