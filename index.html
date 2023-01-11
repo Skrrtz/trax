@@ -126,23 +126,38 @@ and 3ds is valid
       <a  href="webs/PryingRegister.html"class="btn">TPT2 Register</a>
       <a href="webs/tos.html"class="btn">Terms of service</a >
    
-     <a style="box-shadow:0 0 45px #fffc40;" href="webs/v2.html"class="btn">VERSION 2</a >
+     
      <h1>Theme park tycoon 2 (ORIGINAL)</h1>
       <iframe style=margin-top:20px; width="560" height="315" src="https://www.youtube.com/embed/fnM1EPQvNeA?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </body>
 <script>       
-    var images = ["https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/Uo3aF5GeYL37JHv.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/6NeOkxcoC8k5XS2.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/aEJSTDMblQYBN97.png"];
+    var images = ["https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/V39B5OQJZY59M1.jpg","https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/Uo3aF5GeYL37JHv.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/6NeOkxcoC8k5XS2.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/aEJSTDMblQYBN97.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/V39B5OQJZY59M1.jpg",
+    "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/Uo3aF5GeYL37JHv.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/V39B5OQJZY59M1.jpg",
+   "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/Uo3aF5GeYL37JHv.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/6NeOkxcoC8k5XS2.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/V39B5OQJZY59M1.jpg", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/aEJSTDMblQYBN97.png"
+   ];
 var currentIndex = 0;
 
 var myImage = document.getElementById("image69");
 myImage.src = images[currentIndex];
-
+myImage.getAttribute("href"); 
+            myImage.href="https://skrrtz.github.io/trax/webs/v2.html";
 setInterval(function() {
     currentIndex++;
     if (currentIndex >= images.length) {
         currentIndex = 0;
     }
     myImage.src = images[currentIndex];
+   
+    if (myImage.src == "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/V39B5OQJZY59M1.jpg") {
+         myImage.href="https://skrrtz.github.io/trax/webs/v2.html";
+    } else {
+    myImage.href="https://x.synapse.to";
+                
+    }
 }, 15000);
+myImage.addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = myImage.href;
+});
 
 </script>
