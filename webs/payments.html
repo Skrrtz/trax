@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nevi purchases</title>
+    
+    <style>
+        .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+ body {
+  background-color: #0C090A;
+  color:white;
+  text-align: center;
+}
+       
+    </style>
+</head>
+<body>
+   <a href="https://x.synapse.to" target="_blank"><img src="https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/6NeOkxcoC8k5XS2.png" alt="synapse" class="center" id="image69"></a>
+  <h1>PURCHASE TYPES</h1> 
+     <h2>PAYPAL</h2>
+     <h3>THIS IS AUTOMATIC ACCESS TO THE SCRIPT</h3>
+     <a href="https://skrrtz.github.io/trax/webs/paypal.html">BUY WITH PAYPAL</a>
+     <div>
+         <h2>ROBUX</h2>
+         <h3>THIS IS MANUALLY CHECKED AROUND 22AM-6AM TO RECEIVE THE SCRIPT</h3>
+         <a href="https://www.roblox.com/game-pass/118471194/Susremaster">BUY WITH ROBUX</a>
+         <h5>note: must be in discord server to verify purchase for the robux one.</h5>
+         </div>
+</body>
+<script>
+       var images = ["https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/V39B5OQJZY59M1.jpg","https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/Uo3aF5GeYL37JHv.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/6NeOkxcoC8k5XS2.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/aEJSTDMblQYBN97.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/V39B5OQJZY59M1.jpg",
+    "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/Uo3aF5GeYL37JHv.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/V39B5OQJZY59M1.jpg",
+   "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/Uo3aF5GeYL37JHv.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/6NeOkxcoC8k5XS2.png", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/V39B5OQJZY59M1.jpg", "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/aEJSTDMblQYBN97.png"
+   ];
+var currentIndex = 0;
+
+var myImage = document.getElementById("image69");
+myImage.src = images[currentIndex];
+myImage.getAttribute("href"); 
+            myImage.href="https://skrrtz.github.io/trax/webs/v2.html";
+setInterval(function() {
+    currentIndex++;
+    if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
+    myImage.src = images[currentIndex];
+   
+    if (myImage.src == "https://raw.githubusercontent.com/Skrrtz/IdleGames/main/imge/V39B5OQJZY59M1.jpg") {
+         myImage.href="https://skrrtz.github.io/trax/webs/v2.html";
+    } else {
+    myImage.href="https://x.synapse.to";
+                
+    }
+}, 15000);
+myImage.addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = myImage.href;
+});
+
+</script>
+</html>
+
